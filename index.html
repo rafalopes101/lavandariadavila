@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lavandaria da Vila</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --primary:#014423;
+  --bg:#f7faf8;
+  --text:#0f172a;
+  --border:#e5e7eb;
+  --muted:#d6ebe3;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{height:100%;}
+body{
+  font-family:'Inter',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  min-height:100svh;
+  display:flex;
+  flex-direction:column;
+  -webkit-text-size-adjust:100%; /* iOS: evita ajustes inesperados do texto */
+}
+
+/* HEADER (safe-area iOS) */
+header{
+  background:var(--primary);
+  color:#fff;
+  padding:
+    calc(2.75rem + env(safe-area-inset-top))
+    max(1.25rem, env(safe-area-inset-left))
+    2.25rem
+    max(1.25rem, env(safe-area-inset-right));
+  text-align:center;
+}
+header img{
+  width:160px;
+  max-width:50vw;
+  height:auto;
+  margin-bottom:.85rem;
+}
+header h1{
+  font-size:clamp(1.9rem, 4vw, 2.4rem);
+  margin-bottom:.35rem;
+}
+header p{
+  font-size:clamp(1rem, 2.2vw, 1.05rem);
+  color:var(--muted);
+  max-width:60ch;
+  margin:0 auto;
+  line-height:1.35;
+}
+
+/* HORÁRIO NO HEADER */
+.header-horario{
+  margin-top:1rem;
+  font-size:1rem;
+  font-weight:600;
+  color:#e7f5ef;
+}
+
+/* CONTEÚDO */
+main{
+  flex:1;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:
+    3rem
+    max(1.25rem, env(safe-area-inset-left))
+    3rem
+    max(1.25rem, env(safe-area-inset-right));
+}
+
+.actions{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:1.5rem;
+  padding:2.25rem 2rem;
+  box-shadow:0 18px 40px rgba(0,0,0,.08);
+  width:min(900px,100%);
+}
+
+.actions h2{
+  text-align:center;
+  color:var(--primary);
+  margin-bottom:1.5rem;
+  font-size:clamp(1.2rem, 2.6vw, 1.4rem);
+}
+
+.buttons{
+  display:flex;
+  gap:1rem;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
+.buttons a{
+  background:var(--primary);
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+  padding:1rem 2.25rem;
+  border-radius:999px;
+  box-shadow:0 10px 26px rgba(0,0,0,.25);
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:44px; /* toque confortável no mobile */
+}
+
+/* FOOTER (safe-area inferior iOS) */
+footer{
+  text-align:center;
+  padding:
+    1.25rem 1rem
+    calc(1.25rem + env(safe-area-inset-bottom));
+  font-size:.85rem;
+  color:#5f6f68;
+  background:#eef5f1;
+}
+
+/* MOBILE */
+@media (max-width:640px){
+  header{
+    padding:
+      calc(2.25rem + env(safe-area-inset-top))
+      1.25rem
+      2rem
+      1.25rem;
+  }
+  header img{width:130px;}
+  header h1{font-size:2rem;}
+  .actions{padding:1.75rem 1.25rem;}
+  .buttons a{width:100%; max-width:420px;} /* botões mais fáceis no telemóvel */
+}
+</style>
+</head>
+<body>
+
+<header>
+  <img src="images/logo.jpg" alt="Logotipo Lavandaria da Vila">
+  <h1>Lavandaria da Vila</h1>
+  <p>Lavandaria moderna para lavar e secar a sua roupa com rapidez e conforto</p>
+  <div class="header-horario">🕒 Horário de funcionamento: 06h às 01h</div>
+</header>
+
+<main>
+  <section class="actions">
+    <h2>O que pretende fazer?</h2>
+    <div class="buttons">
+      <a href="servicos.html">Ver Serviços</a>
+      <a href="contactos.html">Contactos</a>
+      <a href="imagens.html">Imagens</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  © 2026 Lavandaria da Vila · Lavandaria Self‑Service Moderna
+</footer>
+
+</body>
+</html>
