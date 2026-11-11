@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Loja · Lavandaria da Vila</title>
+<meta name="description" content="Lençóis, jogos de cama, edredões e toalhas. Compre online e levante na Lavandaria da Vila.">
+<meta name="theme-color" content="#fafaf8">
+<link rel="icon" href="images/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+
+<header class="topo">
+  <div class="contentor topo-in">
+    <a class="marca" href="index.html"><img src="images/logo.jpg" alt="">Lavandaria da Vila</a>
+    <button class="menu-btn" aria-label="Abrir menu" aria-expanded="false">☰</button>
+    <nav class="menu" aria-label="Menu principal">
+      <a href="servicos.html">Serviços</a>
+      <a href="loja.html">Loja</a>
+      <a href="imagens.html">Imagens</a>
+      <a href="contactos.html">Contactos</a>
+      <a href="conta.html" class="nav-conta" id="navConta">Entrar</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="contentor titulo-pag">
+    <span class="etiqueta">Loja</span>
+    <h1>Têxteis-lar</h1>
+    <p>Compre online com cartão ou PayPal e levante na lavandaria. Avisamos por telefone quando estiver pronto.</p>
+  </section>
+
+  <section class="contentor secao-curta" style="padding-top:0;padding-bottom:6rem">
+    <div class="filtros" role="group" aria-label="Filtrar por categoria">
+      <button class="ativo" data-filtro="todos">Todos</button>
+      <button data-filtro="lencois">Lençóis</button>
+      <button data-filtro="jogos">Jogos de Cama</button>
+      <button data-filtro="edredoes">Edredões e Mantas</button>
+      <button data-filtro="banho">Banho</button>
+    </div>
+    <div class="produtos" id="produtos" aria-label="Produtos à venda"></div>
+  </section>
+
+<button class="carrinho-btn" id="abrirCarrinho" aria-label="Abrir carrinho">Carrinho <span class="n" id="nCarrinho">0</span></button>
+
+<div class="veu" id="veu"></div>
+<aside class="gaveta" id="gaveta" aria-label="Carrinho de compras" aria-hidden="true">
+  <div class="gaveta-topo">
+    <h2>O seu carrinho</h2>
+    <button class="fechar" id="fecharCarrinho" aria-label="Fechar carrinho">×</button>
+  </div>
+  <div class="gaveta-corpo">
+    <div id="vistaCarrinho">
+      <div id="linhas"></div>
+      <div id="rodapeCarrinho" hidden>
+        <div class="total"><span>Total</span><span class="preco" id="total">0,00 €</span></div>
+
+        <!-- sem sessão -->
+        <div id="pedirLogin" hidden>
+          <div class="bloco-suave">Para concluir a compra precisa de uma conta — assim pode acompanhar a encomenda e nós sabemos a quem ligar.</div>
+          <a class="btn btn-bloco" href="conta.html?voltar=loja.html">Entrar ou criar conta</a>
+        </div>
+
+        <!-- com sessão -->
+        <div id="checkout" hidden>
+          <div class="campo"><label for="cliNome">Nome</label><input id="cliNome" type="text" autocomplete="name" maxlength="60"></div>
+          <div class="campo"><label for="cliTel">Telemóvel</label><input id="cliTel" type="tel" autocomplete="tel" maxlength="20"></div>
+          <div class="bloco-suave"><strong>Levantamento na lavandaria</strong><br>Rua das Lapas 264, Vila Meã · todos os dias das 06h às 00h. Ligamos quando a encomenda estiver pronta.</div>
+          <label class="check"><input type="checkbox" id="aceito"> <span>Li e aceito os <a class="ligacao" href="termos.html" target="_blank">termos de venda</a>.</span></label>
+          <div class="msg erro" id="msg"></div>
+          <div id="paypal-botoes"></div>
+          <p class="seguro">🔒 Pagamento seguro processado pelo PayPal. Não precisa de conta PayPal para pagar com cartão.</p>
+        </div>
+
+        <div class="aviso erro" id="semConfig" hidden></div>
+      </div>
+    </div>
+    <div id="vistaSucesso" hidden></div>
+  </div>
+</aside>
+
+</main>
+
+<footer class="rodape">
+  <div class="contentor">
+    <div class="rodape-in">
+      <div class="col">
+        <strong>Lavandaria da Vila</strong>
+        <span>Rua das Lapas 264, 4605-335 Vila Meã</span>
+        <span>Todos os dias · 06h–00h</span>
+      </div>
+      <div class="col">
+        <a href="tel:+351916186196">+351 916 186 196</a>
+        <a href="mailto:lavandariadavila2025@gmail.com">lavandariadavila2025@gmail.com</a>
+      </div>
+      <div class="col">
+        <a href="termos.html">Termos e Privacidade</a>
+        <a href="https://www.livroreclamacoes.pt/" target="_blank" rel="noopener">Livro de Reclamações</a>
+      </div>
+    </div>
+    <div class="copy">© 2026 Lavandaria da Vila · Preços com IVA incluído</div>
+  </div>
+</footer>
+
+<script type="module" src="js/nav.js"></script>
+<script type="module" src="js/loja.js"></script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>A minha conta · Lavandaria da Vila</title>
+<meta name="description" content="Entre ou crie a sua conta na Lavandaria da Vila.">
+<meta name="theme-color" content="#fafaf8">
+<link rel="icon" href="images/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+
+<header class="topo">
+  <div class="contentor topo-in">
+    <a class="marca" href="index.html"><img src="images/logo.jpg" alt="">Lavandaria da Vila</a>
+    <button class="menu-btn" aria-label="Abrir menu" aria-expanded="false">☰</button>
+    <nav class="menu" aria-label="Menu principal">
+      <a href="servicos.html">Serviços</a>
+      <a href="loja.html">Loja</a>
+      <a href="imagens.html">Imagens</a>
+      <a href="contactos.html">Contactos</a>
+      <a href="conta.html" class="nav-conta" id="navConta">Entrar</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="contentor secao">
+    <div class="caixa-estreita" id="semConfig" hidden>
+      <div class="aviso erro">As contas ainda não estão ativas neste site. Volte mais tarde.</div>
+    </div>
+
+    <!-- SEM SESSÃO -->
+    <div class="caixa-estreita" id="vistaEntrar" hidden>
+      <span class="etiqueta">Conta</span>
+      <h1 style="font-size:2rem;letter-spacing:-.03em;margin:.4rem 0 1.5rem">Bem-vindo</h1>
+      <div class="abas" role="tablist">
+        <button class="ativo" data-aba="entrar">Entrar</button>
+        <button data-aba="registar">Criar conta</button>
+      </div>
+
+      <form id="formEntrar" class="cartao" novalidate>
+        <div class="campo"><label for="eEmail">E-mail</label><input id="eEmail" type="email" autocomplete="email" required></div>
+        <div class="campo"><label for="ePass">Palavra-passe</label><input id="ePass" type="password" autocomplete="current-password" required></div>
+        <div class="msg" id="msgEntrar"></div>
+        <button class="btn btn-bloco" type="submit">Entrar</button>
+        <p style="text-align:center;margin-top:1rem"><a href="#" class="ligacao peq" id="esqueci">Esqueci-me da palavra-passe</a></p>
+      </form>
+
+      <form id="formRegistar" class="cartao" novalidate hidden>
+        <div class="campo"><label for="rNome">Nome</label><input id="rNome" type="text" autocomplete="name" maxlength="60" required></div>
+        <div class="campo"><label for="rTel">Telemóvel</label><input id="rTel" type="tel" autocomplete="tel" maxlength="20" required></div>
+        <div class="campo"><label for="rEmail">E-mail</label><input id="rEmail" type="email" autocomplete="email" required></div>
+        <div class="campo"><label for="rPass">Palavra-passe <span class="muted">(mín. 6 caracteres)</span></label><input id="rPass" type="password" autocomplete="new-password" minlength="6" required></div>
+        <label class="check"><input type="checkbox" id="rTermos"> <span>Li e aceito os <a class="ligacao" href="termos.html" target="_blank">termos e a política de privacidade</a>.</span></label>
+        <div class="msg" id="msgRegistar"></div>
+        <button class="btn btn-bloco" type="submit">Criar conta</button>
+      </form>
+    </div>
+
+    <!-- COM SESSÃO -->
+    <div id="vistaConta" hidden style="max-width:760px;margin:0 auto">
+      <span class="etiqueta">A minha conta</span>
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;margin:.4rem 0 1.5rem">
+        <h1 style="font-size:2rem;letter-spacing:-.03em" id="ola">Olá</h1>
+        <div style="display:flex;gap:.5rem;flex-wrap:wrap">
+          <a class="btn btn-peq" href="admin.html" id="linkAdmin" hidden>Painel de administração</a>
+          <button class="btn btn-sec btn-peq" id="sair">Terminar sessão</button>
+        </div>
+      </div>
+
+      <div class="aviso" id="avisoVerificar" hidden>
+        Confirme o seu e-mail — enviámos-lhe uma ligação. <a href="#" class="ligacao" id="reenviar">Reenviar e-mail</a>
+      </div>
+
+      <div class="cartao" style="margin-bottom:1.1rem">
+        <h2>As minhas encomendas</h2>
+        <div id="minhasEncomendas"><p class="muted">A carregar…</p></div>
+      </div>
+
+      <form class="cartao" id="formPerfil" novalidate>
+        <h2>Os meus dados</h2>
+        <div class="grelha g2">
+          <div class="campo"><label for="pNome">Nome</label><input id="pNome" type="text" maxlength="60"></div>
+          <div class="campo"><label for="pTel">Telemóvel</label><input id="pTel" type="tel" maxlength="20"></div>
+        </div>
+        <div class="campo"><label>E-mail</label><input id="pEmail" type="email" disabled></div>
+        <div class="msg" id="msgPerfil"></div>
+        <button class="btn btn-peq" type="submit">Guardar alterações</button>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="rodape">
+  <div class="contentor">
+    <div class="rodape-in">
+      <div class="col">
+        <strong>Lavandaria da Vila</strong>
+        <span>Rua das Lapas 264, 4605-335 Vila Meã</span>
+        <span>Todos os dias · 06h–00h</span>
+      </div>
+      <div class="col">
+        <a href="tel:+351916186196">+351 916 186 196</a>
+        <a href="mailto:lavandariadavila2025@gmail.com">lavandariadavila2025@gmail.com</a>
+      </div>
+      <div class="col">
+        <a href="termos.html">Termos e Privacidade</a>
+        <a href="https://www.livroreclamacoes.pt/" target="_blank" rel="noopener">Livro de Reclamações</a>
+      </div>
+    </div>
+    <div class="copy">© 2026 Lavandaria da Vila · Preços com IVA incluído</div>
+  </div>
+</footer>
+
+<script type="module" src="js/nav.js"></script>
+<script type="module" src="js/conta.js"></script>
+</body>
+</html>

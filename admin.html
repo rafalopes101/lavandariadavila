@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Administração · Lavandaria da Vila</title>
+<meta name="description" content="Painel de administração.">
+<meta name="theme-color" content="#fafaf8">
+<link rel="icon" href="images/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/estilo.css">
+<meta name="robots" content="noindex">
+</head>
+<body>
+
+<header class="topo">
+  <div class="contentor topo-in">
+    <a class="marca" href="index.html"><img src="images/logo.jpg" alt="">Lavandaria da Vila</a>
+    <button class="menu-btn" aria-label="Abrir menu" aria-expanded="false">☰</button>
+    <nav class="menu" aria-label="Menu principal">
+      <a href="servicos.html">Serviços</a>
+      <a href="loja.html">Loja</a>
+      <a href="imagens.html">Imagens</a>
+      <a href="contactos.html">Contactos</a>
+      <a href="conta.html" class="nav-conta" id="navConta">Entrar</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="contentor secao-curta">
+    <div id="estadoAcesso" class="caixa-estreita" style="padding:3rem 0"><p class="muted">A verificar acesso…</p></div>
+
+    <div id="painel" hidden>
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:1rem;flex-wrap:wrap;margin:1rem 0 1.5rem">
+        <div><span class="etiqueta">Administração</span><h1 style="font-size:2rem;letter-spacing:-.03em">Painel</h1></div>
+        <div class="abas" style="margin:0;min-width:260px">
+          <button class="ativo" data-aba="encomendas">Encomendas</button>
+          <button data-aba="contas">Contas</button>
+        </div>
+      </div>
+
+      <div class="stats">
+        <div class="stat"><div class="v" id="sPreparar">0</div><div class="r">Por preparar</div></div>
+        <div class="stat"><div class="v" id="sProntas">0</div><div class="r">Prontas a levantar</div></div>
+        <div class="stat"><div class="v" id="sMes">0,00 €</div><div class="r">Vendas este mês</div></div>
+        <div class="stat"><div class="v" id="sContas">0</div><div class="r">Contas criadas</div></div>
+      </div>
+
+      <div id="abaEncomendas">
+        <div class="barra-admin">
+          <div class="filtros" style="margin:0" id="filtroEstado">
+            <button class="ativo" data-f="ativas">Ativas</button>
+            <button data-f="todas">Todas</button>
+            <button data-f="paga">Pagas</button>
+            <button data-f="preparacao">Em preparação</button>
+            <button data-f="pronta">Prontas</button>
+            <button data-f="levantada">Levantadas</button>
+            <button data-f="cancelada">Canceladas</button>
+          </div>
+          <div class="campo"><input id="pesquisaEnc" type="search" placeholder="Pesquisar nome, telefone ou nº"></div>
+        </div>
+        <div id="listaEncomendas"></div>
+      </div>
+
+      <div id="abaContas" hidden>
+        <div class="barra-admin"><div class="campo"><input id="pesquisaContas" type="search" placeholder="Pesquisar nome, e-mail ou telefone"></div></div>
+        <div class="cartao rolar" style="padding:.5rem 1rem">
+          <table class="tabela">
+            <thead><tr><th>Nome</th><th>Contacto</th><th>Criada em</th><th>Encomendas</th><th>Total gasto</th></tr></thead>
+            <tbody id="listaContas"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="rodape">
+  <div class="contentor">
+    <div class="rodape-in">
+      <div class="col">
+        <strong>Lavandaria da Vila</strong>
+        <span>Rua das Lapas 264, 4605-335 Vila Meã</span>
+        <span>Todos os dias · 06h–00h</span>
+      </div>
+      <div class="col">
+        <a href="tel:+351916186196">+351 916 186 196</a>
+        <a href="mailto:lavandariadavila2025@gmail.com">lavandariadavila2025@gmail.com</a>
+      </div>
+      <div class="col">
+        <a href="termos.html">Termos e Privacidade</a>
+        <a href="https://www.livroreclamacoes.pt/" target="_blank" rel="noopener">Livro de Reclamações</a>
+      </div>
+    </div>
+    <div class="copy">© 2026 Lavandaria da Vila · Preços com IVA incluído</div>
+  </div>
+</footer>
+
+<script type="module" src="js/nav.js"></script>
+<script type="module" src="js/admin.js"></script>
+</body>
+</html>
