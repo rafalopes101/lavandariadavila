@@ -12,12 +12,13 @@ export const PAYPAL_CLIENT_ID = "COLE_AQUI_O_CLIENT_ID_LIVE_DO_PAYPAL";
 //    console.firebase.google.com → o seu projeto → ⚙ Definições do projeto → "As suas apps" → </> Web
 //    Copie os valores do bloco "firebaseConfig" para aqui.
 export const firebaseConfig = {
-  apiKey: "COLE_AQUI",
-  authDomain: "COLE_AQUI.firebaseapp.com",
-  projectId: "COLE_AQUI",
-  storageBucket: "COLE_AQUI.appspot.com",
-  messagingSenderId: "COLE_AQUI",
-  appId: "COLE_AQUI"
+  apiKey: "AIzaSyBEkcTN9vtoDj3iI62bFqUYvS8KjCTRp4U",
+  authDomain: "lavandariadavila-3eac6.firebaseapp.com",
+  projectId: "lavandariadavila-3eac6",
+  storageBucket: "lavandariadavila-3eac6.firebasestorage.app",
+  messagingSenderId: "879069902069",
+  appId: "1:879069902069:web:502c7a6e797364fb42c1bc",
+  measurementId: "G-71VP6JYNE8"
 };
 
 // 3) ADMINISTRADORES — e-mails com acesso à página admin.html
