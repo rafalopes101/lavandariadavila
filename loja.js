@@ -45,6 +45,13 @@ $("#produtos").addEventListener("click", e => {
   setTimeout(() => { b.textContent = "Adicionar"; b.classList.remove("feito"); }, 1200);
 });
 
+/* Filtros: criados a partir das categorias em uso; só aparecem quando fazem falta. */
+const catsUsadas = [...new Set(PRODUTOS.map(p => p.cat))];
+if (catsUsadas.length > 1 && PRODUTOS.length >= 4) {
+  $("#filtros").innerHTML = `<button class="ativo" data-filtro="todos">Todos</button>` +
+    catsUsadas.map(c => `<button data-filtro="${esc(c)}">${esc(CATEGORIAS[c] || c)}</button>`).join("");
+  $("#filtros").hidden = false;
+}
 $$(".filtros button").forEach(btn => btn.addEventListener("click", () => {
   $$(".filtros button").forEach(b => b.classList.remove("ativo"));
   btn.classList.add("ativo");

@@ -37,18 +37,11 @@ export const LOJA = {
 // 5) PRODUTOS
 //    Para trocar a imagem, ponha a foto na pasta images com o nome indicado em "img".
 //    Para adicionar um produto, copie uma linha e mude o id (único), nome, descrição, preço e imagem.
-//    Categorias possíveis: lencois, jogos, edredoes, banho
+//    Categorias possíveis: as chaves de CATEGORIAS, mais abaixo.
+//    Os filtros por categoria aparecem sozinhos quando houver 4 ou mais artigos de várias categorias.
 export const PRODUTOS = [
-  { id:"lencois-solteiro",   cat:"lencois",  nome:"Jogo de Lençóis Solteiro", desc:"Lençol de baixo, lençol de cima e fronha. 100% algodão.",       preco:24.90, img:"images/lencois-solteiro.jpg" },
-  { id:"lencois-casal",      cat:"lencois",  nome:"Jogo de Lençóis Casal",    desc:"Lençol de baixo, lençol de cima e duas fronhas. 100% algodão.", preco:34.90, img:"images/lencois-casal.jpg" },
-  { id:"fronhas",            cat:"lencois",  nome:"Par de Fronhas",           desc:"Duas fronhas 50x70 cm em algodão macio.",                       preco:9.90,  img:"images/fronhas.jpg" },
-  { id:"jogo-cama-solteiro", cat:"jogos",    nome:"Jogo de Cama Solteiro",    desc:"Capa de edredão, lençol de baixo e fronha a condizer.",         preco:39.90, img:"images/jogo-cama-solteiro.jpg" },
-  { id:"jogo-cama-casal",    cat:"jogos",    nome:"Jogo de Cama Casal",       desc:"Capa de edredão, lençol de baixo e duas fronhas a condizer.",   preco:54.90, img:"images/jogo-cama-casal.jpg" },
-  { id:"resguardo",          cat:"jogos",    nome:"Resguardo de Colchão",     desc:"Impermeável e respirável, protege o colchão de manchas.",      preco:22.90, img:"images/resguardo.jpg" },
-  { id:"edredao",            cat:"edredoes", nome:"Edredão de Inverno",       desc:"Enchimento quente e leve, ideal para as noites frias.",         preco:39.90, img:"images/edredao.jpg" },
-  { id:"manta",              cat:"edredoes", nome:"Manta Polar",              desc:"Manta macia para o sofá ou para a cama.",                       preco:17.90, img:"images/manta.jpg" },
-  { id:"almofada",           cat:"edredoes", nome:"Almofada",                 desc:"Almofada de fibra, firme e confortável.",                       preco:12.90, img:"images/almofada.jpg" },
-  { id:"toalhas",            cat:"banho",    nome:"Conjunto de Toalhas",      desc:"Toalha de banho, toalha de rosto e toalha de mãos.",            preco:19.90, img:"images/toalhas.jpg" }
+  { id:"edredao-branco", cat:"edredoes", nome:"Edredão Branco",    desc:"Edredão acolchoado, quente e leve, para as noites frias de inverno.", preco:39.99, img:"images/edredao.webp" },
+  { id:"pantufas-malha", cat:"pantufas", nome:"Pantufas de Malha", desc:"Pantufas em malha azul com forro interior macio e quente.",            preco:6.99,  img:"images/pantufas.webp" }
 ];
 
-export const CATEGORIAS = { lencois:"Lençóis", jogos:"Jogos de Cama", edredoes:"Edredões e Mantas", banho:"Banho" };
+export const CATEGORIAS = { lencois:"Lençóis", jogos:"Jogos de Cama", edredoes:"Edredões e Mantas", banho:"Banho", pantufas:"Pantufas" };
